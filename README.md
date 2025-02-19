@@ -22,6 +22,6 @@
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=subhro-ai&show_icons=true&locale=en&layout=compact" alt="subhro-ai" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=subhro-ai&show_icons=true&locale=en" alt="subhro-ai" /></p>
+
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=subhro-ai&theme=dark" alt="subhro-ai" /></p>
