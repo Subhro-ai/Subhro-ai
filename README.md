@@ -1,21 +1,151 @@
-# 💫 About Me:
-# 👋 Hey, I’m Subhrajyoti<br><br>I build **systems that sit at the intersection of backend engineering, AI and real-world problem solving.**<br>Most of what I enjoy building are products that automate annoying workflows, process real-time data, or make sense of messy inputs.<br><br>Currently exploring **scalable backend architectures, real-time pipelines and intelligent systems.**<br><br>---<br><br>## ⚡ What I Like Working On<br><br>* Designing **clean backend APIs and data flows**<br>* Building **full-stack products that people actually use**<br>* Turning raw sensor / video / scraped data into **useful insights**<br>* Experimenting with **AI-driven automation & surveillance systems**<br>* Shipping fast → iterating based on real usage<br><br>---<br><br>## 🚀 Selected Work<br><br>### 📅 CalSync<br><br>A system that converts university timetable data into **live calendar subscriptions** so students never manually check schedules again.<br><br>* Automated scraping + structured parsing of academic portal data<br>* Generated ICS subscription feeds compatible with major calendar platforms<br>* Focused on reliability, session handling and update consistency<br>* Adopted quickly by students after launch<br><br>**Themes:** Automation • Data extraction • Developer tooling mindset<br><br>---<br><br>### 🥬 AIoT Freshness Monitoring<br><br>Explored how low-cost sensors + ML can be used to **predict vegetable freshness in storage environments.**<br><br>* Built data pipeline from ESP32 sensors → backend → prediction layer → dashboard<br>* Experimented with environmental feature engineering<br>* Focused on practical deployment constraints rather than just model accuracy<br><br>**Themes:** Edge data • ML integration • Real-time dashboards<br><br>---<br><br>### 🚨 SurveilAI<br><br>An experiment in building **context-aware surveillance systems** instead of rule-based detection.<br><br>* Processed video frames using computer vision pipelines<br>* Backend evaluated potential threats dynamically<br>* Alert system designed for real-time response scenarios<br><br>**Themes:** Applied AI • System design • Event-driven thinking<br><br>---<br><br>## 🧠 Current Focus<br><br>* Backend engineering with **Java & modern API architectures**<br>* **System design fundamentals** and scalability patterns<br>* Building **production-grade full-stack projects**<br>* Preparing for high-impact internships & engineering roles<br><br>---<br><br>## 🛠️ Stack I Reach For<br><br>`Java` • `Python` • `TypeScript`<br>`Spring Boot` • `FastAPI`<br>`Angular` • `React`<br>`PostgreSQL` • `MongoDB`<br>`OpenCV` • `IoT (ESP32)`<br>`Git` • `Linux`<br><br>---<br><br>## 📊 GitHub<br><br><p align="center"><br>  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true" /><br></p><br><br>---<br><br>## 🤝 Reach Out<br><br>If you’re building something interesting or want to collaborate — feel free to connect.<br><br>📧 [subhrajyoti.singha30@gmail.com](mailto:subhrajyoti.singha30@gmail.com)<br><br>---<br><br>⭐ I like working on meaningful systems. If one of my projects helped or inspired you, a star goes a long way.<br>
+# 💫 About Me
 
+## 👋 Hey, I'm Subhrajyoti
 
-## 🌐 Socials:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/subhrajyoti-singha-b243082a3/) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:subhrajyoti.singha30@gmail.com) 
+I build **systems at the intersection of backend engineering, AI, and real-world problem solving.**
 
-# 💻 Tech Stack:
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Apache Tomcat](https://img.shields.io/badge/apache%20tomcat-%23F8DC75.svg?style=for-the-badge&logo=apache-tomcat&logoColor=black) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=subhro-ai&theme=dark&hide_border=false&include_all_commits=true&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=subhro-ai&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=subhro-ai&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
+Most of what I enjoy building are products that automate repetitive workflows, process real-time data, or transform messy inputs into useful insights.
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=subhro-ai&limit=5&theme=dark&combine_all_yearly_contributions=true)
+I'm currently exploring **scalable backend architectures, distributed systems, real-time pipelines, and intelligent applications.**
 
 ---
-[![](https://visitcount.itsvg.in/api?id=subhro-ai&icon=0&color=6)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+## ⚡ What I Enjoy Building
+
+* Clean backend APIs and scalable data flows
+* Full-stack products that people actually use
+* Systems that transform sensor, video, or scraped data into meaningful insights
+* AI-powered automation and computer vision applications
+* Fast iterations driven by real user feedback
+
+---
+
+# 🚀 Featured Projects
+
+## 📅 CalSync
+
+A platform that converts university timetable data into **live calendar subscriptions**, eliminating the need for students to manually check schedules.
+
+### Highlights
+
+* Automated scraping and structured parsing of academic portal data
+* Generated live ICS subscription feeds compatible with Google Calendar, Apple Calendar, and Outlook
+* Reliable session handling and automatic schedule updates
+* Adopted by over **100+ students within 48 hours** of launch
+
+**Tech:** Spring Boot • Angular • Web Scraping • REST APIs
+
+---
+
+## 🥬 AIoT Freshness Monitoring
+
+An intelligent system that predicts **vegetable freshness** using environmental sensors and machine learning.
+
+### Highlights
+
+* ESP32 sensor network for environmental monitoring
+* Backend prediction pipeline with real-time dashboards
+* Practical feature engineering focused on deployment rather than benchmark accuracy
+
+**Tech:** ESP32 • FastAPI • Machine Learning • PostgreSQL
+
+---
+
+## 🚨 SurveilAI
+
+An AI-powered surveillance system that performs **context-aware threat detection** instead of relying solely on rule-based alerts.
+
+### Highlights
+
+* Computer vision pipeline for video processing
+* Dynamic threat evaluation backend
+* Real-time alerting architecture
+
+**Tech:** FastAPI • OpenCV • PostgreSQL • AI
+
+---
+
+# 🧠 Currently Learning
+
+* Backend Engineering with **Java & Spring Boot**
+* System Design & Scalability
+* Distributed Systems
+* Production-grade API Design
+* High-performance backend architectures
+
+---
+
+# 🛠 Tech Stack
+
+### Languages
+
+`Java` • `Python` • `TypeScript` • `JavaScript`
+
+### Backend
+
+`Spring Boot` • `FastAPI`
+
+### Frontend
+
+`Angular` • `React`
+
+### Databases
+
+`PostgreSQL` • `MongoDB` • `MySQL` • `Redis`
+
+### AI / ML
+
+`OpenCV` • `ESP32 IoT`
+
+### Tools
+
+`Git` • `Linux` • `AWS` • `Firebase`
+
+---
+
+# 🌐 Connect With Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/subhrajyoti-singha-b243082a3)
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:subhrajyoti.singha30@gmail.com)
+
+---
+
+# 💻 Tech Stack Badges
+
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge\&logo=openjdk\&logoColor=white)
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge\&logo=angular\&logoColor=white)
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge\&logo=spring\&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge\&logo=postgresql\&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge\&logo=mongodb\&logoColor=white)
+![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge\&logo=redis\&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge\&logo=mysql\&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge\&logo=typescript\&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge\&logo=javascript\&logoColor=%23F7DF1E)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge\&logo=amazon-aws\&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge\&logo=render\&logoColor=white)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge\&logo=firebase)
+
+---
+
+# 📈 GitHub Stats
+
+![](https://github-readme-stats.vercel.app/api?username=subhro-ai\&theme=tokyonight\&show_icons=true\&hide_border=true)
+
+![](https://nirzak-streak-stats.vercel.app/?user=subhro-ai\&theme=tokyonight\&hide_border=true)
+
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=subhro-ai\&layout=compact\&theme=tokyonight\&hide_border=true)
+
+---
+
+# 🏆 Top Contributed Repositories
+
+![](https://github-contributor-stats.vercel.app/api?username=subhro-ai\&limit=5\&theme=tokyonight\&combine_all_yearly_contributions=true)
+
+---
+
+![](https://visitcount.itsvg.in/api?id=subhro-ai\&icon=5\&color=6)
+
+---
+
+⭐ *I enjoy building meaningful systems that solve real problems. If one of my projects helped or inspired you, consider giving it a star!*
