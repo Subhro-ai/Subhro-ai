@@ -103,7 +103,18 @@ An AI-powered surveillance system that performs **context-aware threat detection
 
 ---
 
+# 💼 Available for Freelance Work
+
+I take on freelance work on Fiverr — mostly the same things you see above: scrapers, automation, and bots that run in production rather than on a laptop.
+
+* **[Web scraping & data extraction](https://www.fiverr.com/clickkid/do-web-scraping-and-build-custom-python-scrapers-for-data-extraction)** — custom Python or Node scrapers, clean CSV / Excel / JSON output, full source code included. **Free test scrape before you order.**
+* **[Telegram, WhatsApp & Discord bots](https://www.fiverr.com/clickkid/develop-a-telegram-bot-whatsapp-bot-or-discord-bot-for-automation)** — command-driven bots with databases, scheduled alerts, and Stripe subscription billing. **Free build plan before you order.**
+
+---
+
 # 🌐 Connect With Me
+
+[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge\&logo=fiverr\&logoColor=white)](https://www.fiverr.com/clickkid)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/subhrajyoti-singha-b243082a3)
 
