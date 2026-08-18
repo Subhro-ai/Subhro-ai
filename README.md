@@ -1,162 +1,89 @@
-# 💫 About Me
+<h1 align="center">Subhrajyoti Singha</h1>
 
-## 👋 Hey, I'm Subhrajyoti
+<p align="center">
+  <b>Backend Engineer</b> · Java/Spring Boot · Node.js · Python<br>
+  CS @ SRM Institute of Science and Technology · Class of 2027
+</p>
 
-I build **systems at the intersection of backend engineering, AI, and real-world problem solving.**
-
-Most of what I enjoy building are products that automate repetitive workflows, process real-time data, or transform messy inputs into useful insights.
-
-I'm currently exploring **scalable backend architectures, distributed systems, real-time pipelines, and intelligent applications.**
-
----
-
-## ⚡ What I Enjoy Building
-
-* Clean backend APIs and scalable data flows
-* Full-stack products that people actually use
-* Systems that transform sensor, video, or scraped data into meaningful insights
-* AI-powered automation and computer vision applications
-* Fast iterations driven by real user feedback
+<p align="center">
+  <a href="https://subhrajyoti-portfolio.web.app/">Portfolio</a> ·
+  <a href="https://www.linkedin.com/in/subhrajyoti-singha-b243082a3/">LinkedIn</a> ·
+  <a href="mailto:subhrajyoti.singha30@gmail.com">Email</a>
+</p>
 
 ---
 
-# 🚀 Featured Projects
+I build backend systems that run in production and stay running — concurrent data pipelines, spec-compliant APIs, and containerized services on small, cheap boxes. Most of what I write ends up with real users on the other end.
 
-## 📅 CalSync
-
-A platform that converts university timetable data into **live calendar subscriptions**, eliminating the need for students to manually check schedules.
-
-### Highlights
-
-* Automated scraping and structured parsing of academic portal data
-* Generated live ICS subscription feeds compatible with Google Calendar, Apple Calendar, and Outlook
-* Reliable session handling and automatic schedule updates
-* Adopted by over **100+ students within 48 hours** of launch
-
-**Tech:** Spring Boot • Angular • Web Scraping • REST APIs
+Currently a **Full Stack Engineering Intern at ZeroHash Technology**, working on a live subscription product.
 
 ---
 
-## 🥬 AIoT Freshness Monitoring
+## Open Source — Microsoft PowerToys
 
-An intelligent system that predicts **vegetable freshness** using environmental sensors and machine learning.
+Two merged contributions to [microsoft/PowerToys](https://github.com/microsoft/PowerToys), Microsoft's Windows utility suite (C# / .NET 10, WinUI 3, Native AOT).
 
-### Highlights
+**[#49437](https://github.com/microsoft/PowerToys/pull/49437) — "Update and restart" / "Update and shut down" commands** · merged Aug 2026
+Closed [issue #48849](https://github.com/microsoft/PowerToys/issues/48849) (`Help Wanted`). 15 files, +579/−19, three commits, two full maintainer review rounds.
 
-* ESP32 sensor network for environmental monitoring
-* Backend prediction pipeline with real-time dashboards
-* Practical feature engineering focused on deployment rather than benchmark accuracy
+- Detected pending updates through the **Windows Update Agent COM API** (`ISystemInformation::RebootRequired`) so the commands surface exactly when Windows itself offers them.
+- Wrote **AOT-safe COM interop** with source-generated `[GeneratedComInterface]` and `StrategyBasedComWrappers` — classic `ComImport` marshalling is unavailable under Native AOT.
+- Invoked `InitiateShutdown` via Win32 interop, enabling and then **restoring `SeShutdownPrivilege`** on the process token, including the `ERROR_NOT_ALL_ASSIGNED` case that `AdjustTokenPrivileges` doesn't report through its return value.
+- Reworked the query cache to publish timestamp and value together under a lock using `Environment.TickCount64`, so a concurrent reader can't read a stale value as fresh.
+- Migrated hand-written P/Invoke to **CsWin32** source-generated bindings to match repo conventions. 30 passing unit tests; verified clean on x64 and arm64 CI.
 
-**Tech:** ESP32 • FastAPI • Machine Learning • PostgreSQL
-
----
-
-## 🚨 SurveilAI
-
-An AI-powered surveillance system that performs **context-aware threat detection** instead of relying solely on rule-based alerts.
-
-### Highlights
-
-* Computer vision pipeline for video processing
-* Dynamic threat evaluation backend
-* Real-time alerting architecture
-
-**Tech:** FastAPI • OpenCV • PostgreSQL • AI
+**[#49356](https://github.com/microsoft/PowerToys/pull/49356) — Command Palette calculator functions** · merged Jul 2026
+Fixed a regression where inverse trigonometric functions silently failed after the Mages → exprtk engine migration, then added reciprocal, hyperbolic, and inverse-hyperbolic trig plus `logn(x, base)` and `root(x, n)` — with unit test coverage.
 
 ---
 
-# 🧠 Currently Learning
+## Projects
 
-* Backend Engineering with **Java & Spring Boot**
-* System Design & Scalability
-* Distributed Systems
-* Production-grade API Design
-* High-performance backend architectures
+### [Visalo](https://www.visalo.xyz/) — Schengen visa appointment tracker
+`Node.js` `SQLite` `AWS EC2` `Stripe`
 
----
+Distributed real-time monitoring across **70+ visa endpoints** in the UK and Ireland, polling HTTP scrapers, MTProto, and REST APIs concurrently at 10–50s intervals.
 
-# 🛠 Tech Stack
+- SQLite in WAL mode with SHA-256 content hashing and MD5 fingerprinting for **lock-free deduplication** across concurrent writers — no race conditions, no rate-limit bans.
+- WhatsApp bot and Stripe checkout wired through Express webhooks, handling onboarding, per-market subscription preferences, and lifecycle for **100+ paying subscribers**.
 
-### Languages
+### [CalSync 2.0](https://trycalsync.duckdns.org/) — Timetable → calendar sync
+`Java` `Spring Boot` `PostgreSQL` `Docker` `AWS` — [backend](https://github.com/Subhro-ai/calSync-backend)
 
-`Java` • `Python` • `TypeScript` • `JavaScript`
+Turns a slow university portal into an auto-updating **RFC 5545 iCalendar** feed you subscribe to once in Google/Apple/Outlook Calendar.
 
-### Backend
+- Deterministic event UIDs and ETag conditional caching make refreshes idempotent — no duplicate-event storms when day orders shift mid-semester.
+- Reverse-engineered a Zoho-based portal with jsoup: CAPTCHA challenges, concurrent-session eviction, multi-source merges. **21 JUnit tests.**
+- **Zero requests hit the university servers on a feed read** — everything resolves from a local lookup, and no student credentials are ever stored.
+- 4-service Docker Compose stack on a 1 GB EC2 instance with automatic TLS and daily backups, running at **$0/month**.
 
-`Spring Boot` • `FastAPI`
+### [SurveilAI](https://surveilai.onrender.com/) — AI surveillance system
+`React` `FastAPI` `OpenCV` `PostgreSQL` — [repo](https://github.com/Subhro-ai/SurveilAI)
 
-### Frontend
-
-`Angular` • `React`
-
-### Databases
-
-`PostgreSQL` • `MongoDB` • `MySQL` • `Redis`
-
-### AI / ML
-
-`OpenCV` • `ESP32 IoT`
-
-### Tools
-
-`Git` • `Linux` • `AWS` • `Firebase`
+Threat detection over live video frames, with a PostgreSQL schema built for high-throughput alert metadata.
 
 ---
 
-# 💼 Available for Freelance Work
+## Stack
 
-I take on freelance work on Fiverr — mostly the same things you see above: scrapers, automation, and bots that run in production rather than on a laptop.
-
-* **[Web scraping & data extraction](https://www.fiverr.com/clickkid/do-web-scraping-and-build-custom-python-scrapers-for-data-extraction)** — custom Python or Node scrapers, clean CSV / Excel / JSON output, full source code included. **Free test scrape before you order.**
-* **[Telegram, WhatsApp & Discord bots](https://www.fiverr.com/clickkid/develop-a-telegram-bot-whatsapp-bot-or-discord-bot-for-automation)** — command-driven bots with databases, scheduled alerts, and Stripe subscription billing. **Free build plan before you order.**
-
----
-
-# 🌐 Connect With Me
-
-[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge\&logo=fiverr\&logoColor=white)](https://www.fiverr.com/clickkid)
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/subhrajyoti-singha-b243082a3)
-
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:subhrajyoti.singha30@gmail.com)
+**Languages** Java · Python · C++ · TypeScript/JavaScript · SQL
+**Backend** Spring Boot · Node.js · Express · FastAPI · REST APIs
+**Frontend** React · Next.js · Angular · Tailwind
+**Data** PostgreSQL · MySQL · SQLite · MongoDB · Redis
+**Infra** AWS EC2 · Docker · GitHub Actions · CI/CD · PM2
 
 ---
 
-# 💻 Tech Stack Badges
+## Also
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge\&logo=openjdk\&logoColor=white)
-![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge\&logo=angular\&logoColor=white)
-![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge\&logo=spring\&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge\&logo=mongodb\&logoColor=white)
-![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge\&logo=redis\&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge\&logo=mysql\&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge\&logo=typescript\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge\&logo=javascript\&logoColor=%23F7DF1E)
-![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge\&logo=amazon-aws\&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge\&logo=render\&logoColor=white)
-![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge\&logo=firebase)
+SAP Certified Associate — Back-End Developer (ABAP Cloud) · Generative AI Developer
+NPTEL — Elite in Machine Learning · Silver in Internet of Things
+First Prize, IEEE CSIS Coding Competition 2024
+CGPA 9.34
 
 ---
 
-# 📈 GitHub Stats
-
-![](https://github-readme-stats.vercel.app/api?username=subhro-ai\&theme=tokyonight\&show_icons=true\&hide_border=true)
-
-![](https://nirzak-streak-stats.vercel.app/?user=subhro-ai\&theme=tokyonight\&hide_border=true)
-
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=subhro-ai\&layout=compact\&theme=tokyonight\&hide_border=true)
-
----
-
-# 🏆 Top Contributed Repositories
-
-![](https://github-contributor-stats.vercel.app/api?username=subhro-ai\&limit=5\&theme=tokyonight\&combine_all_yearly_contributions=true)
-
----
-
-![](https://visitcount.itsvg.in/api?id=subhro-ai\&icon=5\&color=6)
-
----
-
-⭐ *I enjoy building meaningful systems that solve real problems. If one of my projects helped or inspired you, consider giving it a star!*
+<p align="center">
+  <i>Open to backend and full-stack roles — India or remote.</i><br>
+  <a href="mailto:subhrajyoti.singha30@gmail.com">subhrajyoti.singha30@gmail.com</a>
+</p>
