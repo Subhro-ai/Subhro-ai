@@ -1,0 +1,46 @@
+name: Update merged PRs
+
+on:
+  schedule:
+    # Daily at 04:17 UTC (09:47 IST).
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/merged-prs.yml'
+      - 'scripts/update-merged-prs.mjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: merged-prs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate merged-PR table
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/update-merged-prs.mjs
+
+      - name: Commit if changed
+        run: |
+          if [ -z "$(git status --porcelain README.md)" ]; then
+            echo "README.md unchanged."
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m 'chore: refresh merged PR list'
+          git push
