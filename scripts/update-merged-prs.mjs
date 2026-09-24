@@ -67,27 +67,72 @@ async function detail(item) {
   };
 }
 
-const escape = (s) => s.replace(/([[\]|\\])/g, '\\$1');
+const htmlEscape = (s) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const month = (d) =>
   d.toLocaleString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+// GitHub strips style/class from README HTML, so all colour comes from
+// shields.io badges and all layout from plain table alignment.
+const badge = (label, value, color) =>
+  `<img alt="${htmlEscape(`${label}: ${value}`)}" src="https://img.shields.io/badge/` +
+  `${encodeURIComponent(label)}-${encodeURIComponent(String(value))}-${color}` +
+  `?style=for-the-badge&labelColor=161B22" />`;
 
 function render(prs) {
   if (prs.length === 0) return '_No merged pull requests yet._';
 
-  const repos = new Set(prs.map((p) => p.repo));
-  const rows = prs.map(
-    (p) =>
-      `| [${p.repo}](https://github.com/${p.repo}) | [#${p.number} — ${escape(p.title)}](${p.url}) | ${month(p.mergedAt)} | \`+${p.additions} −${p.deletions}\` |`,
+  const byRepo = new Map();
+  for (const pr of prs) {
+    if (!byRepo.has(pr.repo)) byRepo.set(pr.repo, []);
+    byRepo.get(pr.repo).push(pr);
+  }
+  const added = prs.reduce((n, pr) => n + pr.additions, 0);
+  const removed = prs.reduce((n, pr) => n + pr.deletions, 0);
+  const num = (n) => n.toLocaleString('en-US');
+
+  const out = [
+    '<p align="center">',
+    `  ${badge('merged', prs.length, '8957E5')}`,
+    `  ${badge('repositories', byRepo.size, '1F6FEB')}`,
+    `  ${badge('added', `+${num(added)}`, '3FB950')}`,
+    `  ${badge('removed', `\u2212${num(removed)}`, 'F85149')}`,
+    '</p>',
+    '',
+  ];
+
+  const repos = [...byRepo.entries()].sort(
+    (a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]),
   );
 
-  return [
-    `**${prs.length} merged pull request${prs.length === 1 ? '' : 's'}** across ` +
-      `**${repos.size} repositor${repos.size === 1 ? 'y' : 'ies'}**.`,
-    '',
-    '| Repository | Pull request | Merged | Diff |',
-    '| --- | --- | --- | --- |',
-    ...rows,
-  ].join('\n');
+  for (const [repo, list] of repos) {
+    const files = list.reduce((n, pr) => n + pr.files, 0);
+    out.push(
+      '<table>',
+      '<tr><td colspan="2">',
+      `<a href="https://github.com/${repo}"><b>${htmlEscape(repo)}</b></a>`,
+      `&nbsp;·&nbsp; <sub>${plural(list.length, 'pull request')} merged` +
+        `&nbsp;·&nbsp; ${plural(files, 'file')} changed</sub>`,
+      '</td></tr>',
+    );
+    for (const pr of list) {
+      out.push(
+        '<tr>',
+        `<td valign="top" align="right"><a href="${pr.url}"><code>#${pr.number}</code></a></td>`,
+        '<td valign="top">',
+        `<a href="${pr.url}">${htmlEscape(pr.title)}</a><br>`,
+        `<sub>merged ${month(pr.mergedAt)} &nbsp;·&nbsp; ` +
+          `<code>+${num(pr.additions)}</code> <code>\u2212${num(pr.deletions)}</code> &nbsp;·&nbsp; ` +
+          `${plural(pr.files, 'file')}</sub>`,
+        '</td>',
+        '</tr>',
+      );
+    }
+    out.push('</table>', '');
+  }
+
+  return out.join('\n').trimEnd();
 }
 
 const found = await searchMergedPrs();
